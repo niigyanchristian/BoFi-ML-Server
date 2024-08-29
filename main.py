@@ -42,7 +42,7 @@ async def predict(image_url: dict):
         
         # Make prediction
         prediction = model.predict(prepared_img)
-        prediction_class = 'jaundice' if prediction[0][0] >= 0.5 else 'normal'
+        prediction_class = 'normal' if prediction[0][0] >= 0.52 else 'jaundice'
         
         return {
             "filename": image_url,  # Extract filename from URL
